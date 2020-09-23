@@ -1,3 +1,8 @@
+import React from 'react'
+import NavBar from './components/NavBar';
+
+
+
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
