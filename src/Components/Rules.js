@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const Rules = () => {
     return(
         <div>
@@ -13,6 +14,6 @@ const Rules = () => {
                 <p>(Solution: Dirty Birdy)</p>
         </div>
     )
-}
+};
 
 export default Home;
