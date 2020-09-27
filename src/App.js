@@ -1,11 +1,24 @@
 import React from 'react';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom';
+import HomeContainer from './Containers/HomeContainer.js';
+import PuzzlesContainer from './Containers/PuzzlesContainer.js';
+import PuzzleShowContainer from './Containers/PuzzleShowContainer.js';
 
-function App() {
+//switch statement between two routes: '/' and '/puzzles'
+
+const App = (props) => {
   return (
-    <div className="App">
-      <p>Hello World!</p>
-    </div>
+    <Router>
+      <div className="App">
+      <Route exact path='/' component={HomeContainer} />
+      <Route exact path='/puzzles' component={PuzzlesContainer} />
+      <Route exact path=`/puzzle/${id}` component={PuzzleShowContainer} />
+      </div>
+    </Router>
   );
 };
 

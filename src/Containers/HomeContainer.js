@@ -1,6 +1,8 @@
 import React from 'react';
 import Rules from '../Components/Rules.js'
 import PuzzlesContainer from './PuzzlesContainer.js'
+import { Link } from "react-router-dom";
+  
 
 class HomeContainer extends React.Component{
 
@@ -23,11 +25,10 @@ class HomeContainer extends React.Component{
         let { toggled } = this.state;
         return (
             <div>
-                <PuzzlesContainer />
                 <h1>Hinky Pinky!</h1>
                 <h2>Welcome to Hinky Pinky! A rhyming word game where you can create or solve clues to word puzzles based on syllables, rhymes, and logic.</h2>
                 <button onClick={this.handleRulesClick}>{this.state.toggled ? "Hide Rules" : "Show Rules"}</button>
-                <button>Puzzles</button>  {/* this will be inside of a link tag, not a button; import link component from reactRouter DOM */}
+                <Link to="/puzzles">Puzzles</Link> 
                 {toggled && <Rules />}
             </div>
         )

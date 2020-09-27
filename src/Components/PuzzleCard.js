@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 const PuzzleCard = (props) => {
     return(
         <div>
-            <a href={"/puzzles/" + props.id}>{props.question}</a> 
+            <Link to={"/puzzles/" + props.id}>{props.question}</Link> 
         </div>
     )
 }
