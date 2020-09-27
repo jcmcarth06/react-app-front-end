@@ -4,7 +4,13 @@ import { Link } from "react-router-dom";
 const PuzzleCard = (props) => {
     return(
         <div>
-            <Link to={"/puzzles/" + props.id}>{props.question}</Link> 
+            <Link to={{
+                pathname: '/puzzles/' + props.id,
+                state: {
+                    question: props.question,
+                    solution: props.solution
+                }
+            }}>{props.question}</Link>
         </div>
     )
 }

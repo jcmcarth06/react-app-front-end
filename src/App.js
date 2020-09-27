@@ -16,7 +16,7 @@ const App = (props) => {
       <div className="App">
       <Route exact path='/' component={HomeContainer} />
       <Route exact path='/puzzles' component={PuzzlesContainer} />
-      <Route exact path=`/puzzle/${id}` component={PuzzleShowContainer} />
+      <Route path='/puzzles/:id' component={PuzzleShowContainer} />
       </div>
     </Router>
   );
