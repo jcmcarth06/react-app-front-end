@@ -38,8 +38,21 @@ class CreatePuzzleContainer extends React.Component{
 
     handleSubmit = (e) => {
         e.preventDefault();
-        
-    }
+        let createPuzzleConfig = {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                "question": this.state.question,
+                "solution": this.state.solution,
+                "number_of_syllables": this.state.numberOfSyllables
+            })
+        };
+        fetch("http://localhost:3000/puzzles", createPuzzleConfig)
+        .then(response => response.json())
+    };
 
     render() {
         return (
