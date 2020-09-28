@@ -1,5 +1,6 @@
 import React from 'react';
 import PuzzleCard from './PuzzleCard.js'
+import { Link } from "react-router-dom";
 
 const PuzzleCardContainer = (props) => {
     console.log(props)
@@ -15,7 +16,8 @@ const PuzzleCardContainer = (props) => {
     })
     return (
         <div className="PuzzleCardsContainer">
-            {puzzles}
+            {puzzles}<br></br>
+            <Link to="/createpuzzle">Create a Puzzle</Link>
         </div>
     )
 }
