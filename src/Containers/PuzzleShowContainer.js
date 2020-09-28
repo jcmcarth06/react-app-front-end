@@ -7,7 +7,8 @@ class PuzzleShowContainer extends React.Component{
         this.state = {
             solution: this.props.history.location.state.solution,
             question: this.props.history.location.state.question,
-            input: ''
+            input: '',
+            correct: false
         }
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);

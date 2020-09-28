@@ -6,8 +6,10 @@ class PuzzlesContainer extends React.Component{
         super()
         this.state = {
           isLoaded: false,
-          puzzles: []
+          puzzles: [],
+          displayPuzzles: []
         }
+        this.filterBySyllables = this.filterBySyllables.bind(this);
     }
 
     componentDidMount() {
@@ -17,17 +19,35 @@ class PuzzlesContainer extends React.Component{
             console.log(result.data)
                 this.setState({
                     isLoaded: true,
-                    puzzles: result.data
+                    puzzles: result.data,
+                    displayPuzzles: result.data
                 });
             })
     }
+
+    filterBySyllables(num) {
+        if (num) {
+            console.log(num);
+            this.setState({
+                displayPuzzles: this.state.puzzles.filter(puzzle => puzzle.attributes.number_of_syllables === num)
+            })
+        } else {
+            this.setState({
+                displayPuzzles: this.state.puzzles
+            })
+        }
+    };
 
     render() {
         return (
             <div>
                 <h1>Puzzles:</h1>
+                <button onClick={() => { this.filterBySyllables(1) }}>Hink Pinks</button>
+                <button onClick={() => { this.filterBySyllables(2) }}>Hinkie Pinkies</button>
+                <button onClick={() => { this.filterBySyllables(3) }}>Hinkerdy Pinkerdies</button>
+                <button onClick={() => { this.filterBySyllables() }}>All Puzzles</button>
                 <PuzzlesCardContainer
-                    puzzles={this.state.puzzles}
+                    puzzles={this.state.displayPuzzles}
                 />
             </div>
         )

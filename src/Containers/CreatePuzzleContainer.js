@@ -52,6 +52,7 @@ class CreatePuzzleContainer extends React.Component{
         };
         fetch("http://localhost:3000/puzzles", createPuzzleConfig)
         .then(response => response.json())
+        this.props.history.push('/puzzles');
     };
 
     render() {
