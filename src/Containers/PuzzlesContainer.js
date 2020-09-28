@@ -43,8 +43,8 @@ class PuzzlesContainer extends React.Component{
             <div>
                 <h1>Puzzles:</h1>
                 <button onClick={() => { this.filterBySyllables(1) }}>Hink Pinks</button>
-                <button onClick={() => { this.filterBySyllables(2) }}>Hinkie Pinkies</button>
-                <button onClick={() => { this.filterBySyllables(3) }}>Hinkerdy Pinkerdies</button>
+                <button onClick={() => { this.filterBySyllables(2) }}>Hinky Pinkies</button>
+                <button onClick={() => { this.filterBySyllables(3) }}>Hinkety Pinketies</button>
                 <button onClick={() => { this.filterBySyllables() }}>All Puzzles</button>
                 <PuzzlesCardContainer
                     puzzles={this.state.displayPuzzles}

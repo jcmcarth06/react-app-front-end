@@ -63,15 +63,15 @@ class CreatePuzzleContainer extends React.Component{
                     <label>
                         Question:
                     <input type="text" value={this.state.value} onChange={this.handleQuestionChange} />
-                    </label>
+                    </label><br></br>
                     <label>
                         Solution:
                     <input type="text" value={this.state.value} onChange={this.handleSolutionChange} />
-                    </label>
+                    </label><br></br>
                     <label>
-                        Number of Syllables:
+                        Number of Syllables Per Word:
                     <input type="number" value={this.state.value} onChange={this.handleNumberOfSyllablesChange} />
-                    </label>
+                    </label><br></br>
                     <input type="submit" value="Submit" />
                     <Link to="/">Home</Link>
                     <Link to="/puzzles">Back</Link> 

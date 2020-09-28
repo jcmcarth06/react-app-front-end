@@ -17,7 +17,8 @@ const PuzzleCardContainer = (props) => {
     return (
         <div className="PuzzleCardsContainer">
             {puzzles}<br></br>
-            <Link to="/createpuzzle">Create a Puzzle</Link>
+            <Link to="/createpuzzle">Create a Puzzle</Link><br></br>
+            <Link to="/">Home</Link>
         </div>
     )
 }
