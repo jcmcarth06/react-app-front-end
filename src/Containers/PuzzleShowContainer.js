@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import Correct from '../Components/Correct.js'
+import Incorrect from '../Components/Incorrect.js'
 
 class PuzzleShowContainer extends React.Component{
     constructor(props) {
@@ -8,7 +10,7 @@ class PuzzleShowContainer extends React.Component{
             solution: this.props.history.location.state.solution,
             question: this.props.history.location.state.question,
             input: '',
-            correct: false
+            correct: 0
         }
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,16 +25,33 @@ class PuzzleShowContainer extends React.Component{
 
     handleSubmit = (e) => {
         e.preventDefault();
+        console.log(this.state)
         const { solution, input } = this.state;
         // perform all neccassary validations
         if (input !== solution) {
-            alert("INCORRECT");
+            this.setState({
+                correct: -1
+            });
         } else {
-            alert("CORRECT")
+            this.setState({
+                correct: 1
+            });
         }
     }
 
     render() {
+        let correct;
+        let incorrect;
+
+        if (this.state.correct === 1) {
+            correct = true
+            incorrect = false
+        }
+        if (this.state.correct === -1) {
+            incorrect = true
+            correct = false
+        }
+
         return (
             <div>
                 <h1>{this.state.question}</h1>
@@ -45,6 +64,8 @@ class PuzzleShowContainer extends React.Component{
                     <Link to="/">Home</Link>
                     <Link to="/puzzles">Back</Link> 
                 </form>
+                {correct && <Correct />}
+                {incorrect && <Incorrect />}
             </div>
         )
     }
