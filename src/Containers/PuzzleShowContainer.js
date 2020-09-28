@@ -28,13 +28,13 @@ class PuzzleShowContainer extends React.Component{
         console.log(this.state)
         const { solution, input } = this.state;
         // perform all neccassary validations
-        if (input !== solution) {
+        if (input.toLowerCase() === solution.toLowerCase()) {
             this.setState({
-                correct: -1
+                correct: 1
             });
         } else {
             this.setState({
-                correct: 1
+                correct: -1
             });
         }
     }
