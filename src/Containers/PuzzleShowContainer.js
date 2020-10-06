@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import Correct from '../Components/Correct.js'
 import Incorrect from '../Components/Incorrect.js'
+import Button from 'react-bootstrap/Button'
 
 class PuzzleShowContainer extends React.Component{
     constructor(props) {

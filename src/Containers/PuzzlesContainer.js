@@ -1,44 +1,33 @@
 import React from 'react';
 import PuzzlesCardContainer from '../Components/PuzzleCardContainer';
+import { connect } from 'react-redux'
+import fetchPuzzles from '../Actions/PuzzleActions'
 
 class PuzzlesContainer extends React.Component{
-    constructor() {
-        super()
-        this.state = {
-          isLoaded: false,
-          puzzles: [],
-          displayPuzzles: []
-        }
-        this.filterBySyllables = this.filterBySyllables.bind(this);
-    }
+
+    state = {displayPuzzles: []}
 
     componentDidMount() {
-        fetch("http://localhost:3000/puzzles")
-        .then(res => res.json())
-        .then((result) => {
-            console.log(result.data)
-                this.setState({
-                    isLoaded: true,
-                    puzzles: result.data,
-                    displayPuzzles: result.data
-                });
-            })
+        this.props.fetchPuzzles()
     }
 
     filterBySyllables(num) {
         if (num) {
             console.log(num);
             this.setState({
-                displayPuzzles: this.state.puzzles.filter(puzzle => puzzle.attributes.number_of_syllables === num)
+                displayPuzzles: this.props.puzzles.filter(puzzle => puzzle.attributes.number_of_syllables === num)
             })
         } else {
             this.setState({
-                displayPuzzles: this.state.puzzles
+                displayPuzzles: this.props.puzzles
             })
         }
     };
 
     render() {
+        if (this.props.isLoading) {
+            return <h1> Loading</h1>
+        }
         return (
             <div>
                 <h1>Puzzles:</h1>
@@ -55,4 +44,4 @@ class PuzzlesContainer extends React.Component{
 }
 
 
-export default PuzzlesContainer;
+export default connect(state => state, {fetchPuzzles})(PuzzlesContainer);
