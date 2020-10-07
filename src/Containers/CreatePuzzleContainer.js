@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { connect } from 'react-redux';
+import { addPuzzle } from '../Actions/PuzzleActions'
+
 
 class CreatePuzzleContainer extends React.Component{
     constructor(props) {
@@ -38,20 +41,18 @@ class CreatePuzzleContainer extends React.Component{
 
     handleSubmit = (e) => {
         e.preventDefault();
-        let createPuzzleConfig = {
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-            },
-            body: JSON.stringify({
-                "question": this.state.question,
-                "solution": this.state.solution,
-                "number_of_syllables": this.state.numberOfSyllables
-            })
-        };
-        fetch("http://localhost:3000/puzzles", createPuzzleConfig)
-        .then(response => response.json())
+        const puzzle = {
+            question: this.state.question,
+            solution: this.state.solution,
+            numberOfSyllables: this.state.number_of_syllables
+        }
+
+        this.props.addPuzzle(puzzle)
+        this.setState({
+            question: "",
+            solution: "",
+            number_of_syllables: "",
+        })
         this.props.history.push('/puzzles');
     };
 
@@ -82,4 +83,4 @@ class CreatePuzzleContainer extends React.Component{
 }
 
 
-export default CreatePuzzleContainer;
+export default connect(null, { addPuzzle })(CreatePuzzleContainer);

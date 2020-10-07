@@ -5,7 +5,7 @@ import fetchPuzzles from '../Actions/PuzzleActions'
 
 class PuzzlesContainer extends React.Component{
 
-    state = {displayPuzzles: []}
+    state = {displayPuzzles: this.props.puzzles}
 
     componentDidMount() {
         this.props.fetchPuzzles()

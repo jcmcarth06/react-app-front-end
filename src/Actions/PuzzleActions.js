@@ -11,6 +11,21 @@ export default function fetchPuzzles() {
     }
 }
 
+export function addPuzzle(puzzle){
+    const configObj = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({puzzle: puzzle})
+    }
 
-
-// export const addPuzzle = (puzzle) => (( type: "ADDED_PUZZLE", payload: puzzle))
+    return (dispatch) => {
+        fetch(baseURL, configObj)
+            .then(res => res.json())
+            .then(puzzle => {
+                dispatch({type: 'ADD_PUZZLE', payload: puzzle})
+            })
+    }
+}

@@ -9,6 +9,8 @@ import { render } from 'react-dom';
 import PuzzleReducer from './Reducers/PuzzleReducer'
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './App.scss'
 
 const store = createStore(PuzzleReducer, applyMiddleware(thunk))
 
