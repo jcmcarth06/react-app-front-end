@@ -12,6 +12,7 @@ export default function fetchPuzzles() {
 }
 
 export function addPuzzle(puzzle){
+
     const configObj = {
         method: 'POST',
         headers: {
@@ -25,7 +26,7 @@ export function addPuzzle(puzzle){
         fetch(baseURL, configObj)
             .then(res => res.json())
             .then(puzzle => {
-                dispatch({type: 'ADD_PUZZLE', payload: puzzle})
+                dispatch({type: 'ADD_PUZZLE', payload: puzzle.data})
             })
     }
 }
