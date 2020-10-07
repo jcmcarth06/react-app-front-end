@@ -44,14 +44,14 @@ class CreatePuzzleContainer extends React.Component{
         const puzzle = {
             question: this.state.question,
             solution: this.state.solution,
-            numberOfSyllables: this.state.number_of_syllables
+            numberOfSyllables: this.state.numberOfSyllables
         }
 
         this.props.addPuzzle(puzzle)
         this.setState({
-            question: "",
-            solution: "",
-            number_of_syllables: "",
+            question: '',
+            solution: '',
+            numberOfSyllables: 0,
         })
         this.props.history.push('/puzzles');
     };

@@ -15,7 +15,7 @@ class PuzzlesContainer extends React.Component{
         if (num) {
             console.log(num);
             this.setState({
-                displayPuzzles: this.props.puzzles.filter(puzzle => puzzle.attributes.number_of_syllables === num)
+                displayPuzzles: this.props.puzzles.filter(puzzle => puzzle.attributes.numberOfSyllables === num)
             })
         } else {
             this.setState({
@@ -42,6 +42,5 @@ class PuzzlesContainer extends React.Component{
         )
     }
 }
-
 
 export default connect(state => state, {fetchPuzzles})(PuzzlesContainer);
