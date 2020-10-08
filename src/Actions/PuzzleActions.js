@@ -2,10 +2,12 @@ const baseURL = "http://localhost:3000/puzzles"
 
 export default function fetchPuzzles() {
     return (dispatch) => {
+        console.log("c")
         dispatch({type:'FETCHING_PUZZLES'})
         fetch(baseURL)
         .then(res => res.json())
         .then((puzzles) => {
+            console.log("d")
             dispatch({type:'FETCH_PUZZLES', payload: puzzles.data})
         })
     }

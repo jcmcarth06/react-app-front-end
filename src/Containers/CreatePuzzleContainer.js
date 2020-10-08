@@ -58,7 +58,7 @@ class CreatePuzzleContainer extends React.Component{
 
     render() {
         return (
-            <div>
+            <div class="createPuzzleDiv">
                 <h1>Create a Puzzle:</h1>
                 <form onSubmit={this.handleSubmit}>
                     <label>
@@ -73,9 +73,9 @@ class CreatePuzzleContainer extends React.Component{
                         Number of Syllables Per Word:
                     <input type="number" value={this.state.value} onChange={this.handleNumberOfSyllablesChange} />
                     </label><br></br>
-                    <input type="submit" value="Submit" />
-                    <Link to="/">Home</Link>
-                    <Link to="/puzzles">Back</Link> 
+                    <input class="buttons" type="submit" value="Submit" />
+                    <Link class="buttons" to="/">Home</Link>
+                    <Link class="buttons" to="/puzzles">Back</Link> 
                 </form>
             </div>
         )

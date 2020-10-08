@@ -14,7 +14,7 @@ import PuzzleShowContainer from './Containers/PuzzleShowContainer.js';
 const App = (props) => {
   return (
     <Router>
-      <div className="App">
+      <div>
       <Route exact path='/' component={HomeContainer} />
       <Route exact path='/puzzles' component={PuzzlesContainer} />
       <Route exact path='/createpuzzle' component={CreatePuzzleContainer} />

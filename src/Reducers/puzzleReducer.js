@@ -5,7 +5,7 @@ export default function puzzleReducer(state = {puzzles: [], isLoading: true}, ac
         case "FETCHING_PUZZLES":
             return {...state, isLoading: true}
         case "ADD_PUZZLE":
-            return {...state, puzzles: [...state.puzzles, action.payload]}
+            return {...state, puzzles: [...state.puzzles, action.payload.attributes]}
         default:
             return state
     }

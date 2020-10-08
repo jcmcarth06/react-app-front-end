@@ -1,11 +1,84 @@
 body {
+
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: helvetica;
+  background-image: url(./Assets/letters.jpg);
+  background-position: center top;
+  background-size: 100% auto;
 }
+
+h1 {
+
+}
+
+.homeDiv {
+  text-align: center;
+  background-color: #EFEFEF;
+  margin-top: 50px;
+  margin-left: 150px;
+  margin-right: 150px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 3px solid black;
+
+}
+
+.puzzlesDiv {
+  text-align: center;
+  background-color: #EFEFEF;
+  margin-top: 50px;
+  margin-left: 150px;
+  margin-right: 150px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 3px solid black;
+
+}
+
+.puzzleShowDiv {
+  text-align: center;
+  background-color: #EFEFEF;
+  margin-top: 50px;
+  margin-left: 150px;
+  margin-right: 150px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 3px solid black;
+
+}
+
+.createPuzzleDiv {
+  text-align: center;
+  background-color: #EFEFEF;
+  margin-top: 50px;
+  margin-left: 150px;
+  margin-right: 150px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 3px solid black;
+
+}
+
+.buttons { 
+  background-color: #EFEFEF;
+  border: 2px solid black;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  height: 28px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin: 2px;
+}
+
+.linkStyle {
+  color: black;
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

@@ -54,16 +54,16 @@ class PuzzleShowContainer extends React.Component{
         }
 
         return (
-            <div>
+            <div class="puzzleShowDiv">
                 <h1>{this.state.question}</h1>
                 <form onSubmit={this.handleSubmit}>
                     <label>
                     Your Guess?
                     <input type="text" value={this.state.value} onChange={this.handleInputChange} />
                     </label>
-                    <input type="submit" value="Submit" />
-                    <Link to="/">Home</Link>
-                    <Link to="/puzzles">Back</Link> 
+                    <input class="buttons" type="submit" value="Submit" />
+                    <Link class="buttons" to="/">Home</Link>
+                    <Link class="buttons" to="/puzzles">Back</Link> 
                 </form>
                 {correct && <Correct />}
                 {incorrect && <Incorrect />}

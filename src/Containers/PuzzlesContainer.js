@@ -29,12 +29,12 @@ class PuzzlesContainer extends React.Component{
             return <h1> Loading</h1>
         }
         return (
-            <div>
+            <div class="puzzlesDiv">
                 <h1>Puzzles:</h1>
-                <button onClick={() => { this.filterBySyllables(1) }}>Hink Pinks</button>
-                <button onClick={() => { this.filterBySyllables(2) }}>Hinky Pinkies</button>
-                <button onClick={() => { this.filterBySyllables(3) }}>Hinkety Pinketies</button>
-                <button onClick={() => { this.filterBySyllables() }}>All Puzzles</button>
+                <button class="buttons" onClick={() => { this.filterBySyllables(1) }}>Hink Pinks</button>
+                <button class="buttons" onClick={() => { this.filterBySyllables(2) }}>Hinky Pinkies</button>
+                <button class="buttons" onClick={() => { this.filterBySyllables(3) }}>Hinkety Pinketies</button>
+                <button class="buttons" onClick={() => { this.filterBySyllables() }}>All Puzzles</button>
                 <PuzzlesCardContainer
                     puzzles={this.state.displayPuzzles}
                 />

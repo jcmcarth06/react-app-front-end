@@ -24,11 +24,11 @@ class HomeContainer extends React.Component{
     render() {
         let { toggled } = this.state;
         return (
-            <div>
+            <div class="homeDiv">
                 <h1>Hinky Pinky!</h1>
                 <h2>Welcome to Hinky Pinky! A rhyming word game where you can create or solve clues to word puzzles based on syllables, rhymes, and logic.</h2>
-                <button onClick={this.handleRulesClick}>{this.state.toggled ? "Hide Rules" : "Show Rules"}</button>
-                <Link to="/puzzles">Puzzles</Link> 
+                <button class="buttons" onClick={this.handleRulesClick}>{this.state.toggled ? "Hide Rules" : "Show Rules"}</button>
+                <Link class="buttons" to="/puzzles">Puzzles</Link> 
                 {toggled && <Rules />}
             </div>
         )
