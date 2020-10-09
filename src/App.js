@@ -9,16 +9,14 @@ import PuzzlesContainer from './Containers/PuzzlesContainer.js';
 import CreatePuzzleContainer from './Containers/CreatePuzzleContainer.js';
 import PuzzleShowContainer from './Containers/PuzzleShowContainer.js';
 
-//switch statement between two routes: '/' and '/puzzles'
-
 const App = (props) => {
   return (
     <Router>
       <div>
-      <Route exact path='/' component={HomeContainer} />
-      <Route exact path='/puzzles' component={PuzzlesContainer} />
-      <Route exact path='/createpuzzle' component={CreatePuzzleContainer} />
-      <Route path='/puzzles/:id' component={PuzzleShowContainer} />
+        <Route exact path='/' component={HomeContainer} />
+        <Route exact path='/puzzles' component={PuzzlesContainer} />
+        <Route exact path='/createpuzzle' component={CreatePuzzleContainer} />
+        <Route path='/puzzles/:id' component={PuzzleShowContainer} />
       </div>
     </Router>
   );

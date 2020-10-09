@@ -2,19 +2,26 @@ const baseURL = "http://localhost:3000/puzzles"
 
 export default function fetchPuzzles() {
     return (dispatch) => {
-        console.log("c")
         dispatch({type:'FETCHING_PUZZLES'})
         fetch(baseURL)
         .then(res => res.json())
         .then((puzzles) => {
-            console.log("d")
             dispatch({type:'FETCH_PUZZLES', payload: puzzles.data})
         })
     }
 }
 
-export function addPuzzle(puzzle){
+export const fetchPuzzle = (id) => {
+    return(dispatch) => {
+        fetch(`${baseURL}/${id}`)
+        .then((res) => res.json())
+        .then((puzzle)=> {
+            dispatch({type:'FETCH_PUZZLE', payload: puzzle.data})
+        })
+    }
+}
 
+export function addPuzzle(puzzle){
     const configObj = {
         method: 'POST',
         headers: {
